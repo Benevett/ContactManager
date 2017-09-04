@@ -1,0 +1,25 @@
+ <p *ngIf="!contacts"><em>Loading...</em></p>
+ 
+<div class="row">
+
+    <div  *ngFor="let contact of contacts; index as contactIndex;">
+        <div class="well col-md-6 " style="width: 25rem;">
+  <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+                  <img *ngIf="!contact.hasPhoto" width="75px" class="card-img-top" src="../../../images/1.png" alt="Card image cap">
+                  <img *ngIf="contact.hasPhoto" [src]="'data:image/jpg;base64,'+contact.base64Photo" width="50px" />
+
+      {{contact.firstname}} {{contact.surname}}</li>
+      <li class="list-group-item"><a [routerLink]="['/contacts', contact.id]" class="btn">View</a>
+      <a [routerLink]="['/contacts', contact.id]" class="btn">Edit</a></li>
+  
+            </ul>
+    
+ 
+        </div>
+
+    </div>
+
+
+ 
+ </div> 

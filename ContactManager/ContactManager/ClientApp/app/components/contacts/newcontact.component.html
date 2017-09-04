@@ -1,0 +1,52 @@
+<h1>New Contact</h1>
+   
+<div  class="well">
+    <form [formGroup]="complexForm" novalidate (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label class="center-block">
+                First Name:
+                <input class="form-control" formControlName="firstname">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">
+                Surname:
+                <input class="form-control" formControlName="lastname">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">
+                EMail:
+                <input class="form-control" formControlName="email">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label class="center-block">
+                Mobile Number:
+                <input class="form-control" formControlName="mobilenumber">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">
+                Home Number:
+                <input class="form-control" formControlName="homenumber">
+            </label>
+        </div>
+
+        <a [routerLink]="['/contacts']" class="btn btn-primary">Back</a>
+        <button type="submit"
+                [disabled]="complexForm.pristine" class="btn btn-success">
+            Save
+        </button>
+    </form>
+    
+</div>
+ 
+
+<div class="alert alert-success fade in" [hidden]="!saved">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>Success!</strong> Contact has been created.
+</div> 
+
+ 

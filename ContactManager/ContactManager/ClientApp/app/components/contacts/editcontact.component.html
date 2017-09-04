@@ -1,0 +1,63 @@
+
+ 
+
+<div *ngIf="contact" class="well"> 
+    <img *ngIf="contact.hasPhoto" [src]="'data:image/jpg;base64,'+contact.base64Photo" width="200px" />
+    <img *ngIf="!contact.hasPhoto" width="200px" class="card-img-top" src="../../../images/1.png" alt="Card image cap">
+ 
+<form [formGroup]="complexForm" (submit)="onSubmit()" novalidate>
+        <div class="form-group">
+            <label class="center-block">
+                First Name:
+                <input class="form-control" formControlName="firstname">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">
+                Surname:
+                <input class="form-control" formControlName="lastname">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">
+                EMail:
+                <input class="form-control" formControlName="email">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label class="center-block">
+                Mobile Number:
+                <input class="form-control" formControlName="mobilenumber">
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="center-block">
+                Home Number:
+                <input class="form-control" formControlName="homenumber">
+            </label>
+        </div>
+        <a [routerLink]="['/contacts']" class="btn btn-primary">Back</a>
+        <a (click)="deleteclicked()" class="btn btn-danger pull-right"> Delete</a>
+
+        <button tpe="submit"  [disabled]="complexForm.pristine" class="btn btn-success">
+            Save
+        </button>
+
+    </form>
+  
+</div>
+  <div class="form-group">
+    <label class="center-block">
+        Click Browse and 'Change Photo' to upload a new photo:
+        <input #fileInput type="file" />
+        
+    </label>
+      <button (click)="addFile()">Change Photo:</button>
+
+</div>
+<div class="alert alert-success fade in" [hidden]="!saved">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>Success!</strong> Contact has been updated.
+</div>
+
