@@ -1,4 +1,4 @@
-# Contact Manager
+ Contact Manager
 A simple project using Visual Studio 2017 DotnetCore2 Angular template
 build using web api and bootstrap css template.
 
@@ -7,7 +7,7 @@ This has been published to azure and is available at [ask me]
 so you will be able to have a look without having to get it to run locally
 
 # Assumptions and Caveats
-This is by no means a finished product and I am aware that it is fairly basic in terms of flashy UI but  it is am attempt to illustrate some of the concepts used to produce he contact manager app required.
+This is by no means a finished product and I am aware that it is fairly basic in terms of flashy UI but  it is an attempt to illustrate some of the concepts used to produce the contact manager app required.
 I chose the angular template since I have previously worked with angular2 and wanted to see how the new template works.
 
 1. There is no security
